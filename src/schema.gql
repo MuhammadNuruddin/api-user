@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateUserInput {
+  id: Float!
+  password: String!
+  username: String!
+}
+
+type LoginResponse {
+  access_token: String!
+  user: User
+}
+
+input LoginUserInput {
+  id: Float!
+  password: String!
+  username: String!
+}
+
+type Mutation {
+  login(LoginUserInput: LoginUserInput!): LoginResponse!
+  register(CreateUserInput: CreateUserInput!): LoginResponse!
+}
+
+type Query {
+  user(username: String!): User!
+  users: [User!]!
+}
+
+type User {
+  """Example field (placeholder)"""
+  id: Int!
+  password: String!
+  username: String!
+}
